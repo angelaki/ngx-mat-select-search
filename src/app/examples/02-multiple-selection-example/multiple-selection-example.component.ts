@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular
 import { FormControl } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
-import { MatSelect } from '@angular/material/select';
+import { MatSelect, MatSelectChange } from '@angular/material/select';
 
 import { Bank, BANKS } from '../demo-data';
 
@@ -90,5 +90,12 @@ export class MultipleSelectionExampleComponent implements OnInit, AfterViewInit,
       this.banks.filter(bank => bank.name.toLowerCase().indexOf(search) > -1)
     );
   }
+
+  selectionChange(event: MatSelectChange):void{
+    this.bankEvents = event.value;
+    console.log('selectionChange usage');
+  }
+
+  bankEvents: Bank[];
 
 }

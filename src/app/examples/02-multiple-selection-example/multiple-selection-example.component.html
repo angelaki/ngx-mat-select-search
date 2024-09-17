@@ -2,7 +2,7 @@
 <h3>Multiple selection</h3>
 <p>
   <mat-form-field>
-    <mat-select [formControl]="bankMultiCtrl" placeholder="Banks" [multiple]="true" #multiSelect>
+    <mat-select [formControl]="bankMultiCtrl" placeholder="Banks" [multiple]="true" #multiSelect (selectionChange)="selectionChange($event)">
       <mat-option>
         <ngx-mat-select-search [formControl]="bankMultiFilterCtrl"></ngx-mat-select-search>
       </mat-option>
@@ -16,5 +16,22 @@
   Selected Banks:
 </p>
 <ul *ngFor="let bank of bankMultiCtrl?.value">
+  <li>{{bank.name}}</li>
+</ul>
+
+<p style="font-weight: bold;">
+  Demonstrate misbehavior:
+</p>
+
+<ol>
+  <li>Filter for "Bank A"</li>
+  <li>Select it</li>
+  <li>You'll notice that the event-handler only emits the *visible* selected items</li>
+</ol>
+
+<p>
+  Selected Banks (Event):
+</p>
+<ul *ngFor="let bank of bankEvents">
   <li>{{bank.name}}</li>
 </ul>
