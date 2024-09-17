@@ -56,6 +56,14 @@ Thank you very much to our financial supporters!
 
 <!-- readme: collaborators -start -->
 <table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/angelaki">
+            <img src="https://avatars.githubusercontent.com/u/38611461?v=4" width="100;" alt="angelaki"/>
+            <br />
+            <sub><b>Tristan</b></sub>
+        </a>
+    </td></tr>
 </table>
 <!-- readme: collaborators -end -->
 
